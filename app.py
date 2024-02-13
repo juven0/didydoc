@@ -1,12 +1,19 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-import os
+from flask import Flask, render_template, request, jsonify
+from database.database import create_tables
+from controller import userController
+
 app = Flask(__name__)
+
 
 @app.route("/",methods=['GET','POST'])
 def index():
+    print(jsonify(userController.get_All()))
     return render_template('index.html')
+
+@app.route("/blog")
+def blog():
+    return jsonify(userController.get_All())
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
@@ -19,4 +26,5 @@ def upload_file():
             return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run()
+    create_tables()
+    app.run(debug=True)
