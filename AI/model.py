@@ -7,7 +7,9 @@ import pickle
 
 class IaModel:
     def __init__(self) -> None:
-        pass
+        with open('./AI/didydoc.gnb', 'rb') as model:
+            self.gnb = pickle.load(model)
 
     def predict(self, dataArray):
-        gnb = pickle.load('./didydoc.gnb')
+        return self.gnb.predict(dataArray)
+        

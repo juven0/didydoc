@@ -1,4 +1,5 @@
 from os import walk
+from os import path as p
 
 class BookController:
     def __init__(self, PATH) -> None:
@@ -6,10 +7,10 @@ class BookController:
     
     def loadFiles(self, path):
         pathArray = []
-        for pathFile, a, files in walk(dir):
-            for file in files:
-                classe = path.basename(path.dirname(pathFile+'/'+file))
-                pathArray.append((pathFile+'/'+file, classe))
+        for pathFile, a, files in walk(path):
+            for f in files:
+                classe = p.basename(p.dirname(pathFile+'/'+f))
+                pathArray.append((f, pathFile+"/"+f, classe))
         return pathArray
     
     def get_all(self):

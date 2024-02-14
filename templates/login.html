@@ -1,0 +1,41 @@
+{%extends "/shared/layout.html" %}
+{% block content %}
+<section class="slider_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="detail-box">
+            <h1>
+              <span> Didydoc</span> <br>
+              Moderne bibliotheque <br>
+              Numerique
+            </h1>
+            <p>
+              "Didydoc, l'application web ultime pour les amoureux de la lecture, offre une bibliothèque diversifiée de livres et une communauté dynamique sur son blog angler, </br>invitant les utilisateurs à découvrir, partager et discuter autour d'une passion commune."
+            </p>
+            
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+            <div class="detail-box">
+             <div class="rigth">
+                <lablel class="title"><span>L</span>ogin</lablel>
+                <form action="/user/login/" method="post" >
+                    <div class="field">
+                        <label for="">email</label>
+                        <input type="email" name="email" id="">
+                    </div>
+                    <div class="field">
+                        <label for="">password</label>
+                        <input type="password" name="password" id="">
+                    </div>
+
+                <button type="submit">login</button>
+                </form>
+             </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

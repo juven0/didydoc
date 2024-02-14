@@ -1,0 +1,34 @@
+{%extends "/shared/layout.html" %}
+{% block content %}
+<div class="books">
+    <div class="books-titles">
+        <label for="" class="bk-t">Blog</label>
+        <div class="books-nav">
+            <a href="/blogs/"><label class="bk-n" for="">All</label></a>
+            <a href="/blogs/classe/politique"><label class="bk-n" for="">Politique</label></a>
+            <a href="/blogs/classe/technologie"><label class="bk-n" for="">Technologie</label></a>
+            <a href="/blogs/classe/autre"><label class="bk-n" for="">autre</label></a>
+        </div>
+        <a href="/blogs/create/"><label for="" class="create">Create</label></a>
+        
+    </div>
+    <div class="blog-content">
+
+    {% for blog in blogs %}
+        <div class="blog-item">
+            <div class="head">
+                <label for="" class="username">bocquelin</label>
+                <label for="" class="tilte">Titre: {{blog[2]}}</label>
+            </div>
+            <div class="content">
+                <p>{{blog[3]}}</p>
+            </div>
+            <div class="comments">
+                <a href="/blogs/{{blog[0]}}"><label for="">comments</label></a>
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

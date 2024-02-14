@@ -7,7 +7,7 @@ class Comments:
     def create(self ,idUser,idpost ,content):
         db = get_db()
         cursor = db.cursor()
-        statement = "INSERT INTO comments(idUser,idPost, content) VALUES (?, ?, ?)"
+        statement = "INSERT INTO comments(user_id,post_id , content) VALUES (?, ?, ?)"
         cursor.execute(statement, [idUser,idpost, content])
         db.commit()
         return True
@@ -21,9 +21,9 @@ class Comments:
         return cursor.fetchone()
 
 
-    def get_All_by_postId(self, id) ->str[str]:
+    def get_All_by_postId(self, id):
         db = get_db()
         cursor = db.cursor()
-        query = "SELECT * FROM comments WHERE idPost = ?"
+        query = "SELECT * FROM comments WHERE post_id  = ?"
         cursor.execute(query, [id])
         return cursor.fetchall()

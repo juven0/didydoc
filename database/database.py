@@ -1,5 +1,5 @@
 import sqlite3
-DATABASE_NAME = "db.db"
+DATABASE_NAME = "b.db"
 
 def get_db():
     conn = sqlite3.connect(DATABASE_NAME)
@@ -22,6 +22,7 @@ def create_tables():
             user_id INTEGER NOT NULL,
             title TEXT NOT NULL,
             content TEXT NOT NULL,
+            classename TEXT NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users (id)
         )
         ''',

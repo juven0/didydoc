@@ -1,15 +1,19 @@
 from flask import request, jsonify
-import userController
+from controller.userController import UsersController
+from database.database import get_db
+
+
+db = get_db()
+user = UsersController(db)
 
 class Authentification:
    def __init__(self) -> None:
       pass
     
-   def login():
-      auth = request.json
-
-      user = userController.ged_by_username(auth['username'])
-      if user and user['password']== auth['password']:
-         pass
-      
-      return jsonify({'message': 'Invalid credentials'}), 401
+   def login(email, password):
+      # user = user.ged_by_email(email)
+      # if user and user['password']== password:
+      #    return True
+      # else:
+      #    return False
+      return True

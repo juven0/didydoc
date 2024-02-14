@@ -1,0 +1,29 @@
+{%extends "/shared/layout.html" %}
+{% block content %}
+<div class="books">
+    <div class="books-titles">
+        <label for="" class="bk-t">Books</label>
+        <div class="books-nav">
+            <a href="/books/"><label class="bk-n" for="">All</label></a>
+            <a href="/books/politique"><label class="bk-n" for="">Politique</label></a>
+            <a href="/books/technologie"><label class="bk-n" for="">Technologie</label></a>
+            <a href="/books/autre"><label class="bk-n" for="">autre</label></a>
+        </div>
+        <a href="/books/create/"><label for="" class="create">Create</label></a>
+    </div>
+    <div class="books-content">
+        {% for book in books %}
+        <div class="book-item">
+            <a href="/books/read/{{book[2]}}/{{book[0]}}">
+            <div class="img">
+                <img src="/static//images/pdf-svgrepo-com.svg" alt="" srcset="">
+            </div>
+           
+            
+            <label for="" class="book-name">{{book[0]}}</label>
+           </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

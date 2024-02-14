@@ -1,0 +1,22 @@
+{%extends "/shared/layout.html" %}
+{% block content %}
+<div class="books">
+    <div class="books-titles">
+        <label for="" class="bk-t">Books</label>
+        <div class="books-nav">
+            <a href="/books/"><label class="bk-n" for="">All</label></a>
+            <a href="/books/politique"><label class="bk-n" for="">Politique</label></a>
+            <a href="/books/technologie"><label class="bk-n" for="">Technologie</label></a>
+            <a href="/books/autre"><label class="bk-n" for="">autre</label></a>
+        </div>
+        <label for="" class="create">go back</label>
+    </div>
+    <div class="blogs-content">
+        <form action="/books/create/" method="post" class="books-create" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" >
+            <label for="file">select book</label>
+            <button type="submit">send</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

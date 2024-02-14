@@ -1,0 +1,26 @@
+{%extends "/shared/layout.html" %}
+{% block content %}
+<div class="books">
+    <div class="books-titles">
+        <label for="" class="bk-t">Blog</label>
+        <label for="" class="create">Create</label>
+    </div>
+    <div class="blog-content">
+
+        <form action="/blogs/create/" class="blog-item" method="post">
+                <input type="hidden" name="id" value="1">
+                <div class="head">
+                    <label for="" class="username">bocquelin</label>
+                    <label for="" class="tilte">Titre: <input type="text" name="title" id=""></label>
+                </div>
+                <div class="content">
+                    <textarea name="content" id="" class="post-content" cols="30" rows="10" placeholder="votre contenue"></textarea>
+                </div>
+                <div class="comments">
+                    <button type="submit">save post</button>
+                </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
